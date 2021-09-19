@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronômetro</title>
+    <link rel="stylesheet" href="./styles/cronometro.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li>
+                     <a href="index.html">Relógio</a>
+                </li>
+
+                <li>
+                    <a href="cronometro.html">Cronômetro</a>
+                </li>    
+
+                <li>
+                    <a href="contato.html">Contato</a>
+                </li>
+              </ul>
+        </nav>
+    </header>
+
+    <div class="containerRelogio">
+
+        <div id="time">
+            <div>
+                <p id="hourCro"></p>
+                <small>Cronômetro</small>
+                <button onclick="start()" id="start">Começar</button>
+                <button onclick="stop()" id="stop">Stop</button>
+                <button onclick="reset()" id="reset">Reiniciar</button>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="./cronometro.js"></script>
+</body>
+</html>
