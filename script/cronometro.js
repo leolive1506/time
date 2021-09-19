@@ -8,6 +8,7 @@ let hr = 0
 let interval
 
 function start() {
+    stop()
     interval = setInterval(addNumber, 1000);
 }
 
@@ -59,9 +60,9 @@ function reset() {
     min = 0
     hr = 0
     clearInterval(interval);
-    hour.innerHTML = hr
-    minutes.innerHTML = min
-    seconds.innerHTML = sec
+    hour.innerHTML = "0" + hr
+    minutes.innerHTML = "0" + min
+    seconds.innerHTML = "0" + sec
     
 }
 

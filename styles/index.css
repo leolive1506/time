@@ -211,6 +211,11 @@ h1 {
         height: 80px;
     }
 
+    .containerRelogio #time div small {
+        height: 30px;
+        padding: 15px
+    }
+
     .seconds {
         order: 1
     }
