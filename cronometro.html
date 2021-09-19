@@ -5,11 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cronômetro</title>
-    <link rel="stylesheet" href="./styles/cronometro.css">
+    <link rel="stylesheet" href="./styles/index.css">
 </head>
 <body>
 
     <header>
+        <div class="menu-section" onclick="toggle()">
+            <div class="menu-toggle">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+            </div>
+        </div>
+  
         <nav>
             <ul>
                 <li>
@@ -20,27 +28,38 @@
                     <a href="cronometro.html">Cronômetro</a>
                 </li>    
 
-                <li>
-                    <a href="contato.html">Contato</a>
-                </li>
               </ul>
         </nav>
     </header>
 
     <div class="containerRelogio">
-
+        <h1>Cronômetro</h1>
         <div id="time">
-            <div>
-                <p id="hourCro"></p>
-                <small>Cronômetro</small>
+            
+            <div class="hour">
+                <p id="hour">00</p>
+                <small>Horas</small>
+            </div>
+
+            <div class="minutes">
+                <p id="minutes">00</p>
+                <small>Minutos</small>
+            </div>
+
+            <div class="seconds">
+                <p id="seconds">00</p>
+                <small>Segundos</small>
+            </div>
+
+            <div class="buttons">
                 <button onclick="start()" id="start">Começar</button>
                 <button onclick="stop()" id="stop">Stop</button>
                 <button onclick="reset()" id="reset">Reiniciar</button>
             </div>
         </div>
-        
+
     </div>
 
-    <script src="./cronometro.js"></script>
+    <script src="./script/cronometro.js"></script>
 </body>
 </html>

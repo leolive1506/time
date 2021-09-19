@@ -11,6 +11,14 @@
 <body>
 
     <header>
+        <div class="menu-section" onclick="toggle()">
+            <div class="menu-toggle">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+            </div>
+        </div>
+
         <nav>
             <ul>
                 <li>
@@ -21,9 +29,6 @@
                     <a href="cronometro.html">Cronômetro</a>
                 </li>    
 
-                <li>
-                    <a href="contato.html">Contato</a>
-                </li>
               </ul>
         </nav>
     </header>
@@ -33,17 +38,17 @@
 
         <h1>Relógio</h1>
         <div id="time">
-            <div>
+            <div class="hour">
                 <p id="hour">00</p>
                 <small>Horas</small>
             </div>
 
-            <div>
+            <div class="minutes">
                 <p id="minutes">00</p>
                 <small>Minutos</small>
             </div>
 
-            <div>
+            <div class="seconds">
                 <p id="seconds">00</p>
                 <small>Segundos</small>
             </div>
@@ -51,6 +56,6 @@
         </div>
 
     </main>
-    <script src="./relogio.js"></script>
+    <script src="./script/relogio.js"></script>
 </body>
 </html>
