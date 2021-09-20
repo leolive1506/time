@@ -171,13 +171,19 @@ h1 {
     body {
         max-width: 600px;
     }
+
     
     nav ul li a {
         font-size: 2rem
     }
+
+    .containerRelogio #time {
+        gap: 0
+    }
+
     .containerRelogio #time div p,
     .containerRelogio #time div small {
-        width: 150px;
+        width: 130px;
         max-width:100%;
     }
 }

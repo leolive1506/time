@@ -1,6 +1,7 @@
 const hour  = document.querySelector("#hour")
 const minutes = document.querySelector("#minutes")
 const seconds  = document.querySelector("#seconds")
+const button = document.querySelector("#start")
 
 let sec = 0
 let min = 0
@@ -8,8 +9,8 @@ let hr = 0
 let interval
 
 function start() {
-    stop()
     interval = setInterval(addNumber, 1000);
+    button.setAttribute("disabled", true)
 }
 
 function addNumber() {    
@@ -53,6 +54,7 @@ function addNumber() {
 
 function stop() {
     clearInterval(interval);
+    button.removeAttribute("disabled")
 }
     
 function reset() {
@@ -63,7 +65,8 @@ function reset() {
     hour.innerHTML = "0" + hr
     minutes.innerHTML = "0" + min
     seconds.innerHTML = "0" + sec
-    
+    button.removeAttribute("disabled")
+    start()
 }
 
 
