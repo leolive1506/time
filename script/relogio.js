@@ -37,7 +37,6 @@ window.addEventListener("load", () => {
     
             if(newSeconds < 10) {
                 seconds.innerHTML = "0" + newSeconds  
-                console.log("menor")
             } 
             else {
                 seconds.innerHTML = newSeconds
@@ -52,5 +51,3 @@ window.addEventListener("load", () => {
     
     setInterval(updateHour, 1000)
 })
-
-

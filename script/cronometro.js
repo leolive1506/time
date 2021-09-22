@@ -1,7 +1,7 @@
 const hour  = document.querySelector("#hour")
 const minutes = document.querySelector("#minutes")
 const seconds  = document.querySelector("#seconds")
-const button = document.querySelector("#start")
+const button = document.querySelector(".start")
 
 let sec = 0
 let min = 0

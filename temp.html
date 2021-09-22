@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporizador</title>
+    <link rel="stylesheet" href="./styles/index.css">
+</head>
+<body>
+
+    <header>
+
+        <div class="menu-section" onclick="toggle()">
+            <div class="menu-toggle">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <li>
+                     <a href="index.html">Relógio</a>
+                </li>
+
+                <li>
+                    <a href="cronometro.html">Cronômetro</a>
+                </li>    
+
+                <li>
+                    <a href="temp.html">Temporizador</a>
+                </li>       
+
+              </ul>
+        </nav>
+    </header>
+
+    <main class="containerRelogio">
+
+        <h1>Temporizador</h1>
+        <div id="time">
+
+            <div class="hour" style="order:1" >
+                <p id="hour">00</p>
+                <small>Horas</small>
+            </div>
+
+            <div class="minutes" style="order:2">
+                <p id="minutes">00</p>
+                <small>Minutos</small>
+            </div>
+
+            <div class="seconds" style="order:3">
+                <p id="seconds">00</p>
+                <small>Segundos</small>
+            </div>
+
+            <div style="order: 99999999">
+                <a href="#" class="addTime" onclick="addTime()">+Tempo</a>
+            </div>
+
+            
+            
+            
+        </div>
+        
+        <div class="wrapper-modal hidden" >
+            <div class="modal">
+                <div class="close-modal" onclick="addTime()">
+                    <div class="menu-toggle">
+                        <!-- <div class="primeiro"></div>
+                        <div class="segundo"></div>
+                        <div class="terceiro"></div> -->
+                        <div class="one modal-content"></div>
+                        <div class="two modal-content"></div>
+                        <div class="three modal-content"></div>
+                    </div>
+                </div>
+
+                <h2>Selecione o tempo desejado</h2>
+
+                <form action="" class="container-select">
+
+                    <div class="group-select">
+                        <label for="seconds">Segundos</label>
+                        <select  name="" class="selectSeconds" >
+                        </select>
+                    </div>
+                    <div class="group-select">
+                        <label for="minutes">Minutos</label>
+                        <select  name="" class="selectMinutes" >
+                        </select>
+                    </div>
+    
+                    <div class="group-select">
+                        <label for="hour">Horas</label>
+                        <select  name="" class="selectHour" >
+                        </select>    
+                    </div>
+
+                    <div>
+
+                        <button class="stop">Cancelar</button>
+                        <button class="start" onclick="audio(event)">Começar</button>
+
+                    </div>
+                </form>
+                
+                
+            </div>
+        </div>
+        
+    </main>
+    
+
+    <script src="./script/temporizador.js"></script>
+
+</body>
+</html>
