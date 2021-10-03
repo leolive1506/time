@@ -29,16 +29,15 @@ a {
     text-decoration: none;
 }
 
-div a {
-    font-size: 2rem;
-    color: var(--roxo);
-    padding: 2px;
-    max-width: 100%
-}
 
 div a:hover {
     border: 1px solid var(--roxo);
-    transition: .5s
+    transition: .5s;
+    opacity: 1
+}
+
+.modal-stop a:hover {
+    border: 0
 }
 
 header, nav, ul {
@@ -106,8 +105,10 @@ nav ul li:hover a::after {
 h1 {
     letter-spacing: .5rem;
     font-weight: 400;
+    text-align: center;
 }
 h2 {
+    text-align: center;
     margin-top: 2rem;
 }
 h2, label {
@@ -158,11 +159,13 @@ h2, label {
 }
 
 .buttons {
+    order: 99;
     max-width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center
+    align-items: center;
+    gap: .5rem
 }
 
 div button {
@@ -174,6 +177,11 @@ div button {
     cursor: pointer;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem
+}
 form div button {
     width: unset;
 }
@@ -206,7 +214,7 @@ div.wrapper-modal {
 
 .modal {
     background-color: white;
-    padding: 20px;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -276,6 +284,27 @@ option {
     padding: 0px 2px 1px;
 }
 
+.modal-stop {
+    opacity: 0;
+    visibility: hidden;
+    display: none
+    
+}
+
+.modal-stop.on {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100vh
+
+}
+
+.modal-stop.on header nav ul {
+    gap: 2rem
+}
+
 .hidden {
     opacity: 0;
     visibility: hidden;
@@ -286,14 +315,25 @@ option {
     visibility: visible;
 }
 
+
+
 @media(max-width: 900px) {
     body {
         max-width: 600px;
+        flex-direction: row;
+        gap: 1rem;
+        max-width: 100%;
     }
 
-    
+    nav ul{
+        background: rgba(199, 71, 242, .5);
+        display: flex;
+        flex-direction: column;
+        justify-content:space-around;
+        height: 100vh
+    }
     nav ul li a {
-        font-size: 2rem
+        font-size: 1.3rem
     }
 
     .containerRelogio #time {
@@ -305,6 +345,10 @@ option {
         width: 120px;
         max-width:100%;
     }
+
+    .modal-stop.on {
+        height: unset
+    }
 }
 
 @media(max-width: 600px) {
@@ -313,15 +357,20 @@ option {
         margin: 0;
         overflow: auto;
         justify-content: center;
+
+        flex-direction: column;
+        gap: 3.3rem
+        
     }
 
     .containerRelogio #time {
         flex-direction: column;
     }
     
-    nav {
+    header nav {
         opacity: 0;
         visibility: hidden;
+        display: none;
     }
 
     .containerRelogio #time div {
@@ -352,7 +401,7 @@ option {
     }
 
     .buttons {
-        order: -1;
+        order: -999999999999;
         width: 200px;
         height: 160px;
     }
@@ -388,11 +437,15 @@ option {
         transform: rotate(-45deg) translate(8px, -10px);
     }
 
-    header .menu-section.on + nav {
-        /* background-color:red; */
+    header .menu-section.on + nav,
+    header .menu-section.on + nav ul {
+        opacity: 1;
+        visibility: visible;
+        display: unset;
+    }
+    header .menu-section.on + nav ul {
         height: 100vh;
         margin: 0;
-        
     }
 
     header .menu-section.on + nav ul {
@@ -401,9 +454,9 @@ option {
         
         display: flex;
         flex-direction: column;
-        justify-content:center;
+        justify-content:space-around;
         align-items: center;
         gap: 1rem
     }
-
+    
 }
