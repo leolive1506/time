@@ -12,6 +12,7 @@ let hr = 0
 let sec = 0 
 
 let interval
+const time = 1000
 
 
 
@@ -112,7 +113,7 @@ const App = {
             } 
             else {
                 seconds.innerHTML = sec
-            }
+            } 
         }
 
         if(sec <= 60 && sec > 0){
@@ -124,12 +125,11 @@ const App = {
             hr--
             min = 59
             sec = 59 
-        } else if(sec == 0 && min == 0 && sec == 0) {
+        } else if(hour.innerText == "00" ||
+            minutes.innerText == "00" ||
+           seconds.innerText == "00")  {
             finishTime()
-        }
-        
-    
-        
+        }        
     }
 }
 
@@ -137,7 +137,7 @@ const App = {
 
 const Build = {
     BuildValuesOption() {
-
+        
         Utils.gerarOption(secondsSelect)
         Utils.gerarOption(minutesSelect)
         Utils.gerarOption(hourSelect)
@@ -174,10 +174,13 @@ const DOM = {
     },
     
     addTime() {
-        
-
+        if(button.innerText == "Continuar") {
+            interval = setInterval(App.startTemp, time)  
+            Utils.validatDisabled(button, buttonStop)  
+            button.innerText = "+Tempo"
+        } else {
             DOM.toggleModal()
-        
+        }
     },
 
     start(event) {
@@ -187,7 +190,7 @@ const DOM = {
         }
 
         buttonReset.setAttribute("disabled", true)
-        interval = setInterval(App.startTemp, 100)
+        interval = setInterval(App.startTemp, time)
         DOM.addTime()
         Utils.validatDisabled(button, buttonStop)
     },
@@ -203,10 +206,9 @@ const DOM = {
 
 
     reset() {
-        clearInterval(interval);
         Utils.clearFields()
-        Utils.validatDisabled(button, buttonStop)
-        DOM.addTime()
+        clearInterval(interval);
+        DOM.toggleModal()
     },
 
 

@@ -203,6 +203,7 @@ div button:hover {
 div.wrapper-modal {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     display: flex;
@@ -316,7 +317,6 @@ option {
 }
 
 
-
 @media(max-width: 900px) {
     body {
         max-width: 600px;
@@ -333,7 +333,7 @@ option {
         height: 100vh
     }
     nav ul li a {
-        font-size: 1.3rem
+        font-size: 1rem
     }
 
     .containerRelogio #time {
@@ -351,7 +351,8 @@ option {
     }
 }
 
-@media(max-width: 600px) {
+
+@media(max-width: 750px) {
 
     body {
         margin: 0;
@@ -460,3 +461,4 @@ option {
     }
     
 }
+
